@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "98994414210",
+    "firebase_url": "https://ratewings.firebaseio.com",
+    "project_id": "ratewings",
+    "storage_bucket": "ratewings.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98994414210:android:97fa8149f19c1099d80a9b",
+        "android_client_info": {
+          "package_name": "com.mampersat.ratewings2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98994414210-dar5rn3k5jmk4k9q6bb56f9cua32o0j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKuqCzAoJYre5lXJWDfsbN-61pvoquPXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98994414210-dar5rn3k5jmk4k9q6bb56f9cua32o0j4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98994414210:android:5f4377de7504cdfbd80a9b",
+        "android_client_info": {
+          "package_name": "com.mampersat.ratewings2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98994414210-dar5rn3k5jmk4k9q6bb56f9cua32o0j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKuqCzAoJYre5lXJWDfsbN-61pvoquPXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98994414210-dar5rn3k5jmk4k9q6bb56f9cua32o0j4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
