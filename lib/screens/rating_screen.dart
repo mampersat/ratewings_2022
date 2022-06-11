@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratewings/models/rating.dart';
 
 class RatingScreen extends StatefulWidget {
   const RatingScreen({Key? key}) : super(key: key);
@@ -8,8 +9,9 @@ class RatingScreen extends StatefulWidget {
 }
 
 class _RatingScreenState extends State<RatingScreen> {
+  Rating rating = Rating(venueName: 'testing');
   @override
   Widget build(BuildContext context) {
-    return Text('rating');
+    return Text(rating.venueName);
   }
 }

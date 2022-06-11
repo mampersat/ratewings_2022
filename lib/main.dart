@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratewings/screens/dashboard_screen.dart';
+import 'screens/dashboard_screen.dart';
 import 'screens/rating_screen.dart';
 
 void main() {
