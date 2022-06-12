@@ -9,7 +9,8 @@ class RatingScreen extends StatefulWidget {
 }
 
 class _RatingScreenState extends State<RatingScreen> {
-  Rating rating = Rating(venueName: 'testing');
+  //Rating rating = Rating(venueName: 'testing');
+  Rating rating = Rating.getSingleRating();
   @override
   Widget build(BuildContext context) {
     return Text(rating.venueName);

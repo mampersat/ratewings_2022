@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/rating_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
+//  Firebase.initializeApp().whenComplete( () {});
+  db = FirebaseFirestore.instance;
   runApp(const MyApp());
 }
 
