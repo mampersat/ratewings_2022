@@ -3,6 +3,8 @@ import 'screens/dashboard_screen.dart';
 import 'screens/rating_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:ratewings/models/rating.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,7 +12,12 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Rating(venueName: 'startup runApp'),
+      child: const MyApp()
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {

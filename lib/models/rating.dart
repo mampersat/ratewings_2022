@@ -1,10 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
-class Rating {
+class Rating extends ChangeNotifier{
   String venueName;
   int? overallRating;
 
-  Rating({required this.venueName});
+  Rating({required this.venueName}) {
+    overallRating=999;
+    getSingleRating();}
 
   factory Rating.fromFirestore(Map<String, dynamic> snapshot,)
       //SnapshotOptions? options,)
@@ -25,7 +28,7 @@ class Rating {
             final data = doc.data() as Map<String, dynamic>;
             print("Inside then()");
             venueName = data['venu_name'];
-            //return Rating.fromFirestore(data);
+            notifyListeners();
       },
       onError: (e) => print("Error getting document: $e"),
     );
