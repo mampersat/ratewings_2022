@@ -6,25 +6,30 @@ class Rating {
 
   Rating({required this.venueName});
 
-  factory Rating.fromFirestore(DocumentSnapshot<Map<String, dynamic>> snapshot,)
+  factory Rating.fromFirestore(Map<String, dynamic> snapshot,)
       //SnapshotOptions? options,)
     {
-    final data = snapshot.data();
+
     return Rating(
-      venueName: data?['name'],
+      venueName: snapshot['venu_name'],
     );
   }
 
-  static getSingleRating() {
+  void getSingleRating() {
 
     final _firestore = FirebaseFirestore.instance;
     final docRef = _firestore.collection("rating").doc("5rIm0s4olRLwc9V0aVtp");
+    print("Calling get()");
     docRef.get().then(
           (DocumentSnapshot doc) {
-        final data = doc.data() as DocumentSnapshot<Map<String, dynamic>>;
-        return Rating.fromFirestore(data);
+            final data = doc.data() as Map<String, dynamic>;
+            print("Inside then()");
+            venueName = data['venu_name'];
+            //return Rating.fromFirestore(data);
       },
       onError: (e) => print("Error getting document: $e"),
     );
+
+    //return Rating(venueName: 'testing outside of then');
   }
 }
