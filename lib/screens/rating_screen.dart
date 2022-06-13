@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratewings/models/rating.dart';
+import 'package:ratewings/models/ratings.dart';
 import 'package:provider/provider.dart';
 
 class RatingScreen extends StatefulWidget {
@@ -13,14 +13,17 @@ class _RatingScreenState extends State<RatingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Rating>(
-      builder: (context, rating, child) {
-        return Text(rating.venueName);
+    return Consumer<Ratings>(
+      builder: (context, ratings, child) {
+        ratings.get();
+        return ListView.builder(
+            itemBuilder: (context, index) {
+              //var rating = ratings.ratings[index];
+              //return Text(ratings.ratings[index].venueName);
+              return Text(ratings.data[index]);
+        });
+          Text("init value");
     }
     );
-    Rating rating = Rating(venueName: 'testing');
-    rating.getSingleRating();
-    print(rating.venueName);
-    return Text(rating.venueName);
   }
 }
