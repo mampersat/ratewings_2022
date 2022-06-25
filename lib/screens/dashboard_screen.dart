@@ -18,15 +18,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Consumer<Ratings>(
       builder: (context, ratings, child) {
-
-        return Column(
-          children: [
-            Text('dashboard'),
-            ElevatedButton(onPressed : () {
-              ratings.get();
-              Navigator.pushNamed(context, '/s');},
-                child: Text('search'))
-          ],
+        return Scaffold(
+            appBar: AppBar( title: Text('Rate Wings Dashboard')),
+            body:
+              ElevatedButton(onPressed : () {
+                ratings.get();
+                Navigator.pushNamed(context, '/s');},
+                  child: Text('search'))
         );
       }
     );

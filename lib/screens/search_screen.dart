@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ratewings/models/ratings.dart';
 import 'package:provider/provider.dart';
+import 'package:ratewings/components/rating_list_item.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -12,25 +13,28 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
     Widget build(BuildContext context) {
-    return Consumer<Ratings>(
-            builder: (context, ratings, child) {
-              if (ratings.data.length == 0) {
-                return( Text("No ratings"));
-              }
-              return(
-                  Column(
-                    children: [
-                      Text('Top Text'),
-                      Expanded(
-                          child: ListView.builder(
-                              itemCount: ratings.data.length,
-                              itemBuilder: (context, index) {
-                                return Text(ratings.data[index]);
-                              }))
-                    ],
-                  )
+    return Scaffold(
+        appBar: AppBar( title: Text('Search Results')),
+        body: Consumer<Ratings>(
+              builder: (context, ratings, child) {
+                if (ratings.data.length == 0) {
+                  return( Text("No results (or loading)"));
+                }
+                return(
+                    Column(
+                      children: [
+                        Expanded(
+                            child: ListView.builder(
+                                itemCount: ratings.data.length,
+                                itemBuilder: (context, index) {
+                                  //return Text(ratings.data[index]);
+                                  return RatingListItem(rating: ratings.data[index]);
+                                }))
+                      ],
+                    )
 
-              );
-            });
+                );
+              }),
+      );
   }
 }

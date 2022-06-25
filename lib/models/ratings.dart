@@ -13,21 +13,10 @@ class Ratings extends ChangeNotifier {
         (value) {
           print(value.size);
           for (int i = 0; i < 10; ++i) {
-
-            Rating rating = Rating(venueName:value.docs[i]['venu_name']);
-            print("Adding " + value.docs[i]['venu_name']);
-            data.add(value.docs[i]['venu_name']);
+            data.add(Rating(venueName:value.docs[i]['venu_name']));
           }
-
-          for (int i = 0; i < 10; ++i) {
-            print("X" + data[i]);
-          }
-
-          print('Notifying listeners');
           notifyListeners();
         }
     );
-
-
     }
   }
