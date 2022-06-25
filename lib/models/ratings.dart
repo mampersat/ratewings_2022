@@ -4,8 +4,10 @@ import 'package:ratewings/models/rating.dart';
 
 class Ratings extends ChangeNotifier {
   List data = [];
+  String testString = 'Test String';
 
-  void get() {
+   get() {
+    data.clear();
     final _firestore = FirebaseFirestore.instance;
     _firestore.collection("rating").get().then(
         (value) {
@@ -20,8 +22,12 @@ class Ratings extends ChangeNotifier {
           for (int i = 0; i < 10; ++i) {
             print("X" + data[i]);
           }
+
+          print('Notifying listeners');
+          notifyListeners();
         }
     );
+
 
     }
   }

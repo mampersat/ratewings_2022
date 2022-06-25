@@ -17,12 +17,10 @@ class _RatingScreenState extends State<RatingScreen> {
       builder: (context, ratings, child) {
         ratings.get();
         return ListView.builder(
+
             itemBuilder: (context, index) {
-              //var rating = ratings.ratings[index];
-              //return Text(ratings.ratings[index].venueName);
               return Text(ratings.data[index]);
         });
-          Text("init value");
     }
     );
   }
