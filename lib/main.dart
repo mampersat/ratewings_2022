@@ -5,6 +5,7 @@ import 'screens/search_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:ratewings/models/ratings.dart';
+import 'package:ratewings/models/rating.dart';
 import 'package:provider/provider.dart';
 import 'constants.dart';
 
@@ -15,9 +16,12 @@ void main() async {
   );
 
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => Ratings(),
-      child: const MyApp()
+    MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => Ratings()),
+          Provider(create: (context) => Rating()),
+        ],
+        child: const MyApp(),
     )
   );
 }

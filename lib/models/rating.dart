@@ -5,12 +5,16 @@ class Rating extends ChangeNotifier{
   String venueName = 'empty';
   int overallRating = 0;
   int heat = 0;
+  String id = 'none';
 
-  Rating(QueryDocumentSnapshot<Map<String, dynamic>> data) {
+  Rating();
+
+  Rating.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> data) {
     venueName = data['venu_name'];
-
     overallRating=data['overall_rating'];
     heat=data['heat'];
+    id = data.id;
+
     }
 
   void getSingleRating() {

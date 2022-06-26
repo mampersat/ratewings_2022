@@ -4,6 +4,7 @@ import 'package:ratewings/models/rating.dart';
 
 class Ratings extends ChangeNotifier {
   List data = [];
+  Rating selected = Rating();
 
    get() {
     data.clear();
@@ -12,7 +13,7 @@ class Ratings extends ChangeNotifier {
         (value) {
           print(value.size);
           for (int i = 0; i < 10; ++i) {
-            data.add(Rating(value.docs[i]));
+            data.add(Rating.fromSnapshot(value.docs[i]));
             //data.add(Rating(venueName:value.docs[i]['venu_name']));
           }
           notifyListeners();
