@@ -2,34 +2,22 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
 class Rating extends ChangeNotifier{
-  String venueName = 'empty';
-  int overallRating = 0;
-  int heat = 0;
   String id = 'none';
+  String venueName = 'New Rating';
+  int overallRating = 5;
+  String note = 'note';
+  String address = "address";
+  int heat = 5;
 
   Rating();
 
   Rating.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> data) {
+    id = data.id;
     venueName = data['venu_name'];
+    note = data['note'];
     overallRating=data['overall_rating'];
     heat=data['heat'];
-    id = data.id;
-
+    address = data['address'] ?? "no address";
     }
 
-  void getSingleRating() {
-
-    final _firestore = FirebaseFirestore.instance;
-    final docRef = _firestore.collection("rating").doc("5rIm0s4olRLwc9V0aVtp");
-    docRef.get().then(
-          (DocumentSnapshot doc) {
-            final data = doc.data() as Map<String, dynamic>;
-            venueName = data['venu_name'];
-            //notifyListeners();
-      },
-      onError: (e) => print("Error getting document: $e"),
-    );
-
-    //return Rating(venueName: 'testing outside of then');
-  }
 }
