@@ -14,9 +14,12 @@ class _RatingScreenState extends State<RatingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Ratings>(
-        builder: (context, ratings, child) {
-          return Text(ratings.selected.venueName);
-      });
+    return Scaffold(
+      appBar: AppBar( title: Text('Rating')),
+      body: Consumer<Ratings>(
+          builder: (context, ratings, child) {
+            return Text(ratings.selected.venueName);
+        }),
+    );
   }
 }

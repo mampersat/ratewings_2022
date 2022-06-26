@@ -13,8 +13,8 @@ class RatingListItem extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         Provider.of<Ratings>(context, listen: false).selected = rating;
         Navigator.pushNamed(context, '/r');}, // TODO Would be nice if  '/r/${rating.id}' worked as a route
       child: Row(
