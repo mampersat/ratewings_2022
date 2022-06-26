@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ratewings/models/ratings.dart';
@@ -19,13 +20,33 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Consumer<Ratings>(
       builder: (context, ratings, child) {
         return Scaffold(
-            appBar: AppBar( title: Text('Rate Wings Dashboard')),
-            body:
-              ElevatedButton(onPressed : () {
-                ratings.get();
-                Navigator.pushNamed(context, '/s');},
-                  child: Text('search'))
-        );
+            body: Center(
+              child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+
+                    FittedBox(
+                        fit:BoxFit.cover,
+                        child: Text('Rate Wings',
+                            style: TextStyle(fontFamily: 'Courier'))
+                    ),
+                    ElevatedButton(onPressed : () {
+                      ratings.get();
+                      Navigator.pushNamed(context, '/n');},
+                        child: Text('Rate')),
+                    ElevatedButton(onPressed : () {
+                      ratings.get();
+                      Navigator.pushNamed(context, '/s');},
+                      child: Text('Search')),
+                ]
+        ),
+              ),
+            )
+
+            );
       }
     );
   }

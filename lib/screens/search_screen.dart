@@ -15,26 +15,29 @@ class _SearchScreenState extends State<SearchScreen> {
     Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar( title: Text('Search Results')),
-        body: Consumer<Ratings>(
-              builder: (context, ratings, child) {
-                if (ratings.data.length == 0) {
-                  return( Text("No results (or loading)"));
-                }
-                return(
-                    Column(
-                      children: [
-                        Expanded(
-                            child: ListView.builder(
-                                itemCount: ratings.data.length,
-                                itemBuilder: (context, index) {
-                                  //return Text(ratings.data[index]);
-                                  return RatingListItem(rating: ratings.data[index]);
-                                }))
-                      ],
-                    )
+        body: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Consumer<Ratings>(
+                builder: (context, ratings, child) {
+                  if (ratings.data.length == 0) {
+                    return( Text("No results (or loading)"));
+                  }
+                  return(
+                      Column(
+                        children: [
+                          Expanded(
+                              child: ListView.builder(
+                                  itemCount: ratings.data.length,
+                                  itemBuilder: (context, index) {
+                                    //return Text(ratings.data[index]);
+                                    return RatingListItem(rating: ratings.data[index]);
+                                  }))
+                        ],
+                      )
 
-                );
-              }),
+                  );
+                }),
+        ),
       );
   }
 }
