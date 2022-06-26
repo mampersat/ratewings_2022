@@ -2,12 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
 class Rating extends ChangeNotifier{
-  String venueName;
-  int? overallRating;
+  String venueName = 'empty';
+  int overallRating = 0;
+  int heat = 0;
 
-  Rating({required this.venueName}) {
-    overallRating=999;
-    getSingleRating();}
+  Rating(QueryDocumentSnapshot<Map<String, dynamic>> data) {
+    venueName = data['venu_name'];
+
+    overallRating=data['overall_rating'];
+    heat=data['heat'];
+    }
 
   void getSingleRating() {
 

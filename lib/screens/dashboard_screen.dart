@@ -30,7 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
                     FittedBox(
                         fit:BoxFit.cover,
-                        child: Text('Rate Wings',
+                        child: Text('Rate\nWings',
                             style: TextStyle(fontFamily: 'Courier'))
                     ),
                     ElevatedButton(onPressed : () {
