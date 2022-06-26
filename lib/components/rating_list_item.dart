@@ -12,22 +12,24 @@ class RatingListItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Flexible(
+        Expanded(
           child: Text( rating.venueName,
-            style: TextStyle(
-              fontSize: 20.0,
-              decorationStyle: TextDecorationStyle.double,
-              backgroundColor: kBackgroundColor,
+              style: TextStyle(
+                fontSize: 20.0,
+                decorationStyle: TextDecorationStyle.double,
+                backgroundColor: kBackgroundColor,
+              ),
             ),
-          ),
         ),
+
         Row(
           children: [
             RatingIconCard(icon: Icons.thumb_up, color: Colors.green, value: rating.overallRating),
-            RatingIconCard(icon: Icons.whatshot, color: Colors.green, value: 5),
-            RatingIconCard(icon: Icons.thumb_up, color: Colors.green, value: 5),
+            RatingIconCard(icon: Icons.whatshot, color: Colors.green, value: rating.heat),
+            //TODO add distance calculation
+            // RatingIconCard(icon: Icons.thumb_up, color: Colors.green, value: 5),
 
           ]
         )
