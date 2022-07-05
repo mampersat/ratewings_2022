@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratewings/screens/rating_edit_screen.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/rating_screen.dart';
 import 'screens/search_screen.dart';
@@ -54,7 +55,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const DashboardScreen(title: 'Dashboard'),
         '/r': (context) => const RatingScreen(),
+        '/e': (context) => const RatingEditScreen(),
         '/s': (context) => const SearchScreen(),
+
       },
     );
   }

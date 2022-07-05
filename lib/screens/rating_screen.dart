@@ -24,17 +24,26 @@ class _RatingScreenState extends State<RatingScreen> {
                   padding: EdgeInsets.all(10.0),
                   child: Column(children: [
                     RatingListItem(rating: ratings.selected),
-                    Row(children: [
 
+                    Row(children: [
+                      Text('Created: '),
+                      Expanded(child: Text(ratings.selected.created)),
+                    ]),
+
+                    Row(children: [
                       Text('Notes: '),
-                      Text(ratings.selected.note),
+                      Expanded(child: Text(ratings.selected.note)),
                     ]),
 
                     Row(children: [
                       Text('Address: '),
                       Text(ratings.selected.address),
-                    ],)
+                    ],),
 
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/e');}, // TODO Would be nice if  '/r/${rating.id}' worked as a route
+                        child: Text('Edit')),
                   ])));
         });
   }

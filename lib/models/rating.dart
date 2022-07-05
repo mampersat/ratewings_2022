@@ -8,6 +8,7 @@ class Rating extends ChangeNotifier{
   String note = 'note';
   String address = "address";
   int heat = 5;
+  String created = "unknown"; // TODO change data type
 
   Rating();
 
@@ -18,6 +19,7 @@ class Rating extends ChangeNotifier{
     overallRating=data['overall_rating'];
     heat=data['heat'];
     address = data['address'] ?? "no address";
+    created = data['created'] ?? "unknown";
     }
 
 }
